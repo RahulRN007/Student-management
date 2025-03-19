@@ -1,0 +1,187 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.Userregistration-main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Userregistration-container {
+    width: 97%;
+    height: 96%;
+    background: linear-gradient(to bottom, rgb(18, 134, 143) 70%, white 100%);
+    border-radius: 15px;
+}
+.Userregistration-form-maindiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 37.5rem;
+    /* max-height: 44rem; */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    left: 40rem;
+    top: 5rem;
+    /* overflow-y: auto; */
+    
+}
+.Userregistration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 37.5rem;
+    max-height: 44rem;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    overflow-y: auto;
+    
+}
+
+.Userregistration-signin-div{
+    position: relative;
+    
+    
+}
+
+.Userregistration-title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.Userregistration-title::before,
+.Userregistration-title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+}
+
+.Userregistration-title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+}
+
+.Userregistration-title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.Userregistration-message,
+.Userregistration-signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+}
+
+.Userregistration-signin {
+    text-align: center;
+}
+
+.Userregistration-signin a {
+    color: royalblue;
+}
+
+.Userregistration-signin a:hover {
+    text-decoration: underline royalblue;
+}
+
+.Userregistration-flex {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.Userregistration-form label {
+    position: relative;
+    width: 17rem;
+    
+    
+}
+
+.Userregistration-form label .Userregistration-input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.Userregistration-form label .Userregistration-input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.Userregistration-form label .Userregistration-input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.Userregistration-form label .Userregistration-input:focus+span,
+.Userregistration-form label .Userregistration-input:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.Userregistration-form label .Userregistration-input:valid+span {
+    color: green;
+}
+
+.Userregistration-submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    position: relative;
+    left: 13rem;
+    top: 1rem;
+}
+
+.Userregistration-submit:hover {
+    background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+Link{
+    text-decoration: none;
+}

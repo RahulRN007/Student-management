@@ -1,0 +1,404 @@
+.Adminstudentdetails-main {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom right, rgb(18, 134, 143), rgb(13, 108, 113));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Adminstudentdetails-container {
+    width: 95%;
+    height: 93%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    display: flex;
+    z-index: 1;
+
+}
+
+.Adminstudentdetails-sidebar {
+    width: 18%;
+    height: 100%;
+    border-radius: 15px;
+    border: 1px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Adminstudentdetails-menu {
+    height: 3rem;
+    width: 90%;
+    border-radius: 15px;
+    position: relative;
+    top: 140px;
+    margin-top: .5rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.menu-icons {
+    font-size: 20px;
+    margin-left: 1rem;
+    margin-right: .5rem;
+}
+
+.Adminstudentdetails-menu:hover {
+    background: linear-gradient(to bottom right, rgb(18, 134, 143), rgb(13, 108, 113));
+    transform: scale(1.05);
+}
+
+.Adminstudentdetails-menu.active {
+    background: linear-gradient(to bottom right, rgb(18, 134, 143), rgb(13, 108, 113));
+}
+
+.menu-names {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.Adminstudentdetails-rightside {
+    /* background-color: red; */
+    width: 85%;
+    height: 100%;
+    border-radius: 15px;
+    border: 1px white;
+    background: linear-gradient(to top, rgb(18, 134, 143) 70%, white 100%);
+    animation: bubble-effect 5s infinite ease-in-out;
+}
+
+
+
+
+.Adminstudentdetails-details-tab {
+    width: 94%;
+    height: 95%;
+    background: rgba(255, 255, 255, 0.4);
+    position: relative;
+    top: 4rem;
+    left: 3rem;
+    overflow-y: auto;
+
+}
+
+.Adminstudentdetails-table {
+    width: 100%;
+    /* margin: 20px auto; */
+    border-collapse: collapse;
+    /* Ensures the table cells are joined */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds subtle shadow for depth */
+    border-radius: 10px;
+    /* Rounded corners for the table */
+}
+
+.Adminstudentdetails-table th,
+.Adminstudentdetails-table td {
+    padding: 12px 15px;
+    /* Adds space inside the cells */
+    text-align: center;
+    /* Center-align text */
+    border: 1px solid #ddd;
+    /* Adds border between cells */
+}
+
+.Adminstudentdetails-table th {
+    background-color: rgb(18, 134, 143);
+    color: white;
+    font-weight: bold;
+}
+
+.Adminstudentdetails-table td {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.Adminstudentdetails-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Zebra-striping for rows */
+}
+
+.Adminstudentdetails-table tr:hover {
+    background-color: #e2f3f5;
+    /* Highlight row on hover */
+}
+
+.Adminstudentdetails-table-caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: #2f3640;
+    border-radius: 50px;
+    position: absolute;
+    left: 55rem;
+    top: 2.3rem;
+    width: 20rem;
+    z-index: 2;
+}
+
+.searchButton {
+    color: white;
+    position: absolute;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+/*hover effect*/
+button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+}
+
+/*button pressing effect*/
+button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    padding: 18px 46px 24px 26px;
+}
+
+.update_details_popup {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    width: 114rem;
+    height: 56rem;
+    top: 2.2rem;
+    right: 3rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.popup_form {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: small;
+}
+
+.popup_button {
+    width: 168px;
+    top: 20px;
+    position: relative;
+    height: 40px;
+    left: 2.6rem;
+}
+
+.popup_form input {
+    width: 250px;
+    height: 20px;
+}
+
+
+.Adminstudentdetails-logo {
+    position: absolute;
+    width: 140px;
+    height: 77px;
+    left: 8rem;
+    top: 5rem;
+}
+
+.Adminstudentdetails-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+
+
+
+
+.Userregistration-form-maindiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 37.5rem;
+    /* max-height: 44rem; */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    left: 40rem;
+    top: 5rem;
+    /* overflow-y: auto; */
+    
+}
+.Userregistration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 37.5rem;
+    max-height: 44rem;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    overflow-y: auto;
+    
+}
+
+.Userregistration-signin-div{
+    position: relative;
+    
+    
+}
+
+.Userregistration-title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.Userregistration-title::before,
+.Userregistration-title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+}
+
+.Userregistration-title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+}
+
+.Userregistration-title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.Userregistration-message,
+.Userregistration-signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+}
+
+.Userregistration-signin {
+    text-align: center;
+}
+
+.Userregistration-signin a {
+    color: royalblue;
+}
+
+.Userregistration-signin a:hover {
+    text-decoration: underline royalblue;
+}
+
+.Userregistration-flex {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.Userregistration-form label {
+    position: relative;
+    width: 17rem;
+    
+    
+}
+
+.Userregistration-form label .Userregistration-input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.Userregistration-form label .Userregistration-input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.Userregistration-form label .Userregistration-input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.Userregistration-form label .Userregistration-input:focus+span,
+.Userregistration-form label .Userregistration-input:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.Userregistration-form label .Userregistration-input:valid+span {
+    color: green;
+}
+
+.Userregistration-submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    position: relative;
+    left: 13rem;
+    top: 1rem;
+}
+
+.Userregistration-submit:hover {
+    background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+Link{
+    text-decoration: none;
+}

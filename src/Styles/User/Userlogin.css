@@ -1,0 +1,103 @@
+.Userlogin-main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Userlogin-container {
+    width: 97%;
+    height: 96%;
+    background: linear-gradient(to bottom, rgb(18, 134, 143) 70%, white 100%);
+    border-radius: 15px;
+}
+
+.Userlogin-loginbox {
+    width: 22%;
+    height: 47%;
+    background: linear-gradient(to top, rgb(18, 134, 143) 50%, white 100%);
+
+    border-radius: 15px;
+    position: relative;
+    top: 28%;
+    left: 74%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Userlogin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .Userlogin-form-input {
+    width: 20rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    min-width: 20rem;
+} */
+
+.Userlogin-form-input {
+    width: 20rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    min-width: 20rem;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    padding: 0 10px;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.Userlogin-form-input:focus {
+    border-color: #2563EB; /* Blue border on focus */
+    background-color: #E5E7EB; /* Light gray background when focused */
+    outline: none; /* Remove default outline */
+}
+
+
+.Userlogin-form-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    color: black;
+    
+} 
+
+
+.Userlogin-form-button {
+    width: 45%;
+    height: 2.5rem;
+    margin-top: 1.5rem;
+    margin-right: 10rem;
+}
+
+.Userlogin-form-forgottext {
+    font-size: 15px;
+    margin-top: 5px;
+    color: black;
+    position: relative;
+    bottom: 9%;
+    left: 6.5rem;
+    text-decoration: underline;
+    
+}
+.Userlogin-form-termstext{
+    color: black;
+    margin-top: 0.1rem;
+    margin-right: 2rem;
+    margin-left: 2.5rem;
+
+}
+.Userlogin-form-createtext{
+    position: relative;
+    bottom: 0rem;
+}
+.Userlogin-form-createtext span{
+    text-decoration: underline;
+    color: blue;
+}
