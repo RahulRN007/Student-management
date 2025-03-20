@@ -30,6 +30,7 @@ function Adminstudentdetails() {
     const studentDetails = async () => {
         const api = await axios.get("http://localhost:5000/adminstudentdetails")
         setStudents(api.data.data)
+
         studentDetails()
 
     }

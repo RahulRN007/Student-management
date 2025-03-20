@@ -105,3 +105,6 @@ Link{
     left: 8rem;
     top: 5rem;
 }
+#grid2{
+    flex-direction: column;
+}
