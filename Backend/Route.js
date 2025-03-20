@@ -13,6 +13,10 @@ route.post('/userloginverification',Studentcontroller.userLoginVerification)
 route.get('/studentprofiledetails/:id',Studentcontroller.studentProfileDetails)
 route.post('/activedeactive/:id',Studentcontroller.activeDeactive)
 route.post('/search/',Admincontroller.searchValues)
+route.get('/sortmech',Admincontroller.sortMech)
+route.get('/sortcs',Admincontroller.sortCs)
+route.get('/sorteee',Admincontroller.sortEee)
+route.get('/sortec',Admincontroller.sortEc)
 
 
 
