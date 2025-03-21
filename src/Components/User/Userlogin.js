@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import '../../Styles/User/Userlogin.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import logo from '../../Images/logo2.png'
+import { AppContext } from '../../Contexts/AppContext';
 
 // {state:{id:userid}}
 function Userlogin() {
 
   const [email,setEmail] = useState([])
   const [password,setPassword] = useState([])
-
+  const { updateLoginInfo } = useContext(AppContext);
   const navigate = useNavigate()
   
   const verification = async(e) =>{
@@ -18,9 +19,10 @@ function Userlogin() {
       console.log(email)
       
       var cat = await axios.post("http://localhost:5000/userloginverification",{email,password})
-      alert(cat.data.msg)
+      (cat.data.msg)
       const userid = cat.data.data._id
       if(cat.data.msg == "Successfull found"){
+        updateLoginInfo(cat.data.data.name);
       navigate("/userlandingpage")
       const userData = {
         userid: cat.data.data._id,

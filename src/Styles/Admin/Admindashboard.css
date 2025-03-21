@@ -108,3 +108,23 @@ Link{
 #grid2{
     flex-direction: column;
 }
+
+.message-tiles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .message-tile {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message-tile p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
