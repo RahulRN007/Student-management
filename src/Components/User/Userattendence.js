@@ -33,7 +33,7 @@ function Userattendence() {
 
   const [profilePic, setProfilePic] = useState("https://via.placeholder.com/150");
   const [selectedSemester, setSelectedSemester] = useState("Semester 1");
-  const [activeMenu, setActiveMenu] = useState(2)
+  const [activeMenu, setActiveMenu] = useState(3)
   const navigate = useNavigate()
 
   const handleMenuClick = (menuId) => {
@@ -45,7 +45,11 @@ function Userattendence() {
       setActiveMenu(menuId);
       navigate("/attendence")
 
-    }
+    }else if(menuId == 4){
+      setActiveMenu(menuId);
+      navigate("/userstudents")
+  }
+
   };
 
 
@@ -63,12 +67,12 @@ function Userattendence() {
 
   const [student, setStudent] = useState({
     name: "",
-    marks: {
-      "Semester 1": [85, 78, 92, 88, 76, 95],
-      "Semester 2": [80, 85, 90, 86, 78, 92],
-      "Semester 3": [88, 79, 94, 91, 83, 97],
-      "Semester 4": [82, 81, 89, 87, 79, 93],
-    },
+    // marks: {
+    //   "Semester 1": [85, 78, 92, 88, 76, 95],
+    //   "Semester 2": [80, 85, 90, 86, 78, 92],
+    //   "Semester 3": [88, 79, 94, 91, 83, 97],
+    //   "Semester 4": [82, 81, 89, 87, 79, 93],
+    // },
   });
 
 
@@ -103,15 +107,17 @@ function Userattendence() {
       <div className="sidebar">
         <h2>Dashboard</h2>
         <ul>
-          <li className={`Userlanding-menu ${activeMenu === 1 ? 'active' : ''}`}
-            onClick={() => handleMenuClick(1)}>Profile</li>
-          <Link to='/usermark'><li className={`Userlanding-menu ${activeMenu === 2 ? 'active' : ''}`}
-            onClick={() => handleMenuClick(2)}>Performance</li></Link>
-          <Link to='/userattendence'><li className={`Userlanding-menu ${activeMenu === 3 ? 'active' : ''}`}
-            onClick={() => handleMenuClick(3)}>Attendance</li></Link>
-          <li className="Userlanding-menu">Subjects</li>
-          <li className="Userlanding-menu" onClick={logout}>Logout</li>
-        </ul>
+                                    
+                                    <li className={`Userlanding-menu ${activeMenu === 1 ? 'active' : ''}`}
+                                      onClick={() => handleMenuClick(1)}>Profile</li>
+                                    <Link to='/usermark'><li className={`Userlanding-menu ${activeMenu === 2 ? 'active' : ''}`}
+                                      onClick={() => handleMenuClick(2)}>Performance</li></Link>
+                                    <Link to='/userattendence'><li className={`Userlanding-menu ${activeMenu === 3 ? 'active' : ''}`}
+                                      onClick={() => handleMenuClick(3)}>Attendance</li></Link>
+                                    <Link to='/userstudents'><li className={`Userlanding-menu ${activeMenu === 4 ? 'active' : ''}`}
+                                      onClick={() => handleMenuClick(4)}>Students</li></Link>
+                                    <li className="Userlanding-menu" onClick={logout}>Logout</li>
+                                  </ul>
       </div>
 
       {/* Main Content */}

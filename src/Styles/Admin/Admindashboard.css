@@ -1,7 +1,12 @@
+*{
+    box-sizing: border-box;
+}
 .Admindashboard-main{
     width: 100vw;  
     height: 100vh; 
-    background: linear-gradient(to bottom right, rgb(18, 134, 143),rgb(13, 108, 113));
+    /* background: linear-gradient(to bottom right, rgb(18, 134, 143),rgb(13, 108, 113)); */
+    background-image: url('../../Images/college.jpg');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,10 +23,12 @@
     width: 18%;
     height: 100%;
     border-radius: 15px;
-    border: 1px black;
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: red;
+
 }
 .Admindashboard-menu{
     height: 3rem;
@@ -54,23 +61,16 @@
 }
 .Admindashboard-rightside{
     /* background-color: red; */
-    width: 85%;
+    width: 83%;
     height: 100%;
     border-radius: 15px;
     border: 1px white;
-    background: linear-gradient(to top, rgb(18, 134, 143) 70%, white 100%);
+    
+    /* background: linear-gradient(to top, rgb(18, 134, 143) 70%, white 100%); */
     animation: bubble-effect 5s infinite ease-in-out;
 }
 
-.Admindashboard-gridcontainer{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-gap: 20px; 
-  height: 10vh; 
-  padding: 70px;
-  position: relative;
-  top: 10rem;
-}
+
 .Admindashboard-grid{
     background: rgba(255, 255, 255, 0.6);
     color: white;
@@ -126,5 +126,194 @@ Link{
     margin: 0;
     font-size: 16px;
     color: #333;
+  }
+  
+
+  .Admindashboard-grid-small {
+    display: flex;
+    position: relative;
+    top: 3rem;
+    margin-left: 4.7rem;
+  }
+  
+  .Admindashboard-grid-small1,
+  .Admindashboard-grid-small2
+   {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    height: 15rem;
+    width: 30rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .Admindashboard-grid-small1{
+    position: relative;
+    right: 3rem;
+    
+  }
+  .Admindashboard-grid-small2{
+    position: relative;
+    right: 2rem;
+    
+  }
+  .Admindashboard-piechart{
+    margin-left: 7rem;
+    margin-top: -.5rem;
+  }
+  .Admindashboard-grid-small3{
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    height: 15rem;
+    width: 33rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+    right:2.5rem;
+  }
+
+  .Admindashboard-grid-small1:hover,
+  .Admindashboard-grid-small3:hover,
+  .Admindashboard-grid-small2:hover,
+  .Admindashboard-grid-small5:hover,
+  .Admindashboard-grid-small6:hover
+ {
+    transform: scale(1.05); 
+  }
+  
+  /* Large blocks (5 and 6) */
+  .Admindashboard-grid-small5,
+  .Admindashboard-grid-small6 {
+    height: 35rem;
+    width: 30rem;
+    background-color: white;
+    column-gap: span 2;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+    
+  }
+
+.Admindashboard-grid-large{
+  position: relative;
+  top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  left: 1.5rem;
+}
+
+  .Admindashboard-logindetails {
+    width: 100%;
+    /* margin: 20px auto; */
+    border-collapse: collapse;
+    /* Ensures the table cells are joined */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds subtle shadow for depth */
+    border-radius: 10px;
+    /* Rounded corners for the table */
+}
+ 
+.Admindashboard-logindetails th,
+.Admindashboard-logindetails td {
+    padding: 12px 15px;
+    /* Adds space inside the cells */
+    text-align: center;
+    /* Center-align text */
+    border: 1px solid #ddd;
+    /* Adds border between cells */
+}
+
+.Admindashboard-logindetails th {
+    background-color: rgb(18, 134, 143);
+    color: white;
+    font-weight: bold;
+    
+}
+
+.Admindashboard-logindetails td {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.Admindashboard-logindetails tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* Zebra-striping for rows */
+}
+
+.Admindashboard-logindetails tr:hover {
+    background-color: #e2f3f5;
+    /* Highlight row on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Admindashboard-grid-small5,.Admindashboard-grid-small6{
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-y: auto;
+  }
+  
+  .Admindashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+
+  
+  .Admindashboard-table-header {
+    display: grid;
+    grid-template-columns: 1.7fr 2.2fr 2fr 1.7fr 2fr;
+    align-items: center;
+    padding: 1rem ;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .Admindashboard-row{
+    display: grid;
+    grid-template-columns: 1.7fr 2.2fr 2fr 1.7fr 2fr;
+    align-items: center;
+    padding: 1rem ;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .Admindashboard-table-header {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .Admindashboard-row {
+    transition: background 0.3s;
+  }
+  
+  .Admindashboard-row:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  
+  .more-options {
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
   }
   

@@ -24,6 +24,10 @@
           navigate("/attendence")
 
       }
+      else if(menuId == 4){
+        setActiveMenu(menuId);
+        navigate("/userstudents")
+    }
       };
       
 
@@ -108,16 +112,17 @@
         <div className="sidebar">
           <h2>Dashboard</h2>
           <ul>
-            
-            <li className={`Userlanding-menu ${activeMenu === 1 ? 'active' : ''}`}
-              onClick={() => handleMenuClick(1)}>Profile</li>
-            <Link to='/usermark'><li className={`Userlanding-menu ${activeMenu === 2 ? 'active' : ''}`}
-              onClick={() => handleMenuClick(2)}>Performance</li></Link>
-            <Link to='/userattendence'><li className={`Userlanding-menu ${activeMenu === 3 ? 'active' : ''}`}
-              onClick={() => handleMenuClick(3)}>Attendance</li></Link>
-            <li className="Userlanding-menu">Subjects</li>
-            <li className="Userlanding-menu" onClick={logout}>Logout</li>
-          </ul>
+                            
+                            <li className={`Userlanding-menu ${activeMenu === 1 ? 'active' : ''}`}
+                              onClick={() => handleMenuClick(1)}>Profile</li>
+                            <Link to='/usermark'><li className={`Userlanding-menu ${activeMenu === 2 ? 'active' : ''}`}
+                              onClick={() => handleMenuClick(2)}>Performance</li></Link>
+                            <Link to='/userattendence'><li className={`Userlanding-menu ${activeMenu === 3 ? 'active' : ''}`}
+                              onClick={() => handleMenuClick(3)}>Attendance</li></Link>
+                            <Link to='/userstudents'><li className={`Userlanding-menu ${activeMenu === 4 ? 'active' : ''}`}
+                              onClick={() => handleMenuClick(4)}>Students</li></Link>
+                            <li className="Userlanding-menu" onClick={logout}>Logout</li>
+                          </ul>
         </div>
 
         {/* Main Content */}

@@ -1,4 +1,6 @@
 var schema = require("../Schema/Studentschema")
+var likeschema = require("../Schema/Likeschema")
+var useridschema = require("../Schema/Useridschema")
 
 
 const saveData = async (req, res) => {
@@ -16,7 +18,7 @@ const saveData = async (req, res) => {
       department: req.body.department,
       phonenumber: req.body.phonenumber,
       password: req.body.password,
-      confirmpassword:req.body.confirmpassword,
+      confirmpassword: req.body.confirmpassword,
       gender: req.body.gender,
       bloodgroup: req.body.bloodgroup,
       mothername: req.body.mothername,
@@ -29,7 +31,7 @@ const saveData = async (req, res) => {
       plustwopercentage: req.body.plustwopercentage,
       entrancepercentage: req.body.entrancepercentage,
       dobpassing: req.body.dobpassing,
-      status:"active"
+      status: "active"
 
     });
     await details.save();
@@ -37,11 +39,13 @@ const saveData = async (req, res) => {
 
     res.status(200).json({
       msg: "Saved successfully",
+      id:details._id
     });
   } catch (error) {
     console.error(error);
     res.status(500).json({
       msg: "Error saving data",
+      
     });
   }
 };
@@ -81,25 +85,76 @@ const deleteData = async (req, res) => {
 
 const activeDeactive = async (req, res) => {
   try {
-      const user = await schema.findById(req.params.id);
-      if (!user) {
-          return res.status(404).json({ msg: "User not found" });
-      }
-      const newStatus = user.status === "active" ? "deactive" : "active";
-      const updatedUser = await schema.findByIdAndUpdate(
-          req.params.id,
-          { status: newStatus },
-          { new: true }
-      );
-      res.status(200).json({
-          msg: `Status updated to ${newStatus}`,
-          data: updatedUser
-      });
+    const user = await schema.findById(req.params.id);
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+    const newStatus = user.status === "active" ? "deactive" : "active";
+    const updatedUser = await schema.findByIdAndUpdate(
+      req.params.id,
+      { status: newStatus },
+      { new: true }
+    );
+    res.status(200).json({
+      msg: `Status updated to ${newStatus}`,
+      data: updatedUser
+    });
 
   } catch (error) {
-      res.status(500).json({ msg: "Status update failed!!!", error });
+    res.status(500).json({ msg: "Status update failed!!!", error });
   }
 };
+
+
+
+  const like = async (req, res) => {
+    const { likeruserid, likeduserid } = req.body
+    console.log(req.body);
+    try {
+      const result = await likeschema.findOne({liker:likeruserid,liked:likeduserid})
+      console.log("result");
+      
+      console.log(result)
+      if(result == null){
+        const ids = new likeschema({
+          liker: req.body.likeruserid,
+          liked: req.body.likeduserid
+        });
+        await ids.save();
+        res.status(200).json({
+          msg: "liked successfully"
+        })
+      }
+      else if (result.liker == liker && result.liked == liked) {
+        res.status(200).json({
+          msg: "liked once already"
+        })
+      }
+        
+    }
+    catch (error) {
+      res.status(500).json({ msg: "like failed!!!", error });
+
+    }
+  }
+
+
+  const likeView = async(req,res)=>{
+    try{
+      const result = await likeschema.find({}).populate("liker liked")
+      console.log(result);
+      
+      res.status(200).json({
+        data:result
+      })
+
+    }
+    catch(error){
+      res.status(500).json({ msg: "likeview failed!!!", error });
+
+    }
+  }
+
 
 
 const editData = async (req, res) => {
@@ -135,7 +190,7 @@ const userLoginVerification = async (req, res) => {
   const { email, password } = req.body
   console.log(email)
   console.log(password)
-  
+
   try {
     const result = await schema.findOne({ email: email })
     if (result == null) {
@@ -143,13 +198,13 @@ const userLoginVerification = async (req, res) => {
         msg: "Username not found",
       });
     }
-    else if (result.email==email && result.password == password && result.status == "active") {
+    else if (result.email == email && result.password == password && result.status == "active") {
       res.status(200).json({
         msg: "Successfull found",
         data: result,
       });
     }
-    else if (result.email==email && result.password == password && result.status == "deactive") {
+    else if (result.email == email && result.password == password && result.status == "deactive") {
       res.status(200).json({
         msg: "Account is deactivated. Contact admin! ",
       });
@@ -180,4 +235,6 @@ const studentProfileDetails = async (req, res) => {
   }
 }
 
-module.exports = { activeDeactive,saveData, showData, deleteData, editData, updateData, userLoginVerification, studentProfileDetails }
+
+
+module.exports = { likeView,like, activeDeactive, saveData, showData, deleteData, editData, updateData, userLoginVerification, studentProfileDetails }

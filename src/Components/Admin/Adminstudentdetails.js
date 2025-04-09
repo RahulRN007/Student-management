@@ -30,7 +30,6 @@ function Adminstudentdetails() {
     const studentDetails = async () => {
         const api = await axios.get("http://localhost:5000/adminstudentdetails")
         setStudents(api.data.data)
-
         studentDetails()
 
     }
@@ -40,7 +39,7 @@ function Adminstudentdetails() {
     }, [])
 
 
-    const handleDelete = async (id) => {
+    const handleActive = async (id) => {
 
         const val = id
         try {
@@ -83,12 +82,11 @@ function Adminstudentdetails() {
 
         }
     }
-
-    
     const filteredStudents = students.filter(student =>
 
         student.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
+
 
     return (
         <div className='Adminstudentdetails-main'>
@@ -314,7 +312,7 @@ function Adminstudentdetails() {
                                         <td>{student.department}</td>
                                         <td>{student.phonenumber}</td>
                                         <td><button onClick={() => handleEdit(student._id)}>Edit</button></td>
-                                        <td><button type='button' onClick={() => handleDelete(student._id)}>{student.status}</button></td>
+                                        <td><button type='button' onClick={() => handleActive(student._id)}>{student.status}</button></td>
                                     </tr>
                                 </tbody>
                             ))}

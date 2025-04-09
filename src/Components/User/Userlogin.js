@@ -1,28 +1,26 @@
-import React, { useState,useContext } from 'react'
+import React, { useState } from 'react'
 import '../../Styles/User/Userlogin.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import logo from '../../Images/logo2.png'
-import { AppContext } from '../../Contexts/AppContext';
+// import { AppContext } from '../../Contexts/AppContext';
 
 // {state:{id:userid}}
 function Userlogin() {
 
   const [email,setEmail] = useState([])
   const [password,setPassword] = useState([])
-  const { updateLoginInfo } = useContext(AppContext);
+  // const { updateLoginInfo } = useContext(AppContext);
   const navigate = useNavigate()
   
   const verification = async(e) =>{
     e.preventDefault()
     try{
-      console.log(email)
-      
       var cat = await axios.post("http://localhost:5000/userloginverification",{email,password})
-      (cat.data.msg)
       const userid = cat.data.data._id
+      
       if(cat.data.msg == "Successfull found"){
-        updateLoginInfo(cat.data.data.name);
+        // updateLoginInfo(cat.data.data.name);
       navigate("/userlandingpage")
       const userData = {
         userid: cat.data.data._id,
@@ -49,10 +47,11 @@ function Userlogin() {
         entrancepercentage: cat.data.data.entrancepercecntage,
         dobpassing: cat.data.data.dobpassing,
         status: cat.data.data.status,
-         
+        
     };
-
+    saveUserId(userid)
     localStorage.setItem("userDetails", JSON.stringify(userData));
+    localStorage.setItem("userid",userid)
       }
     }catch(error)
     {
@@ -60,7 +59,18 @@ function Userlogin() {
       
     }
   }
-
+ const saveUserId = async(e)=>{
+  const id = e
+  console.log("ahem")
+  console.log(id)
+  try{ 
+const cat = await axios.post("http://localhost:5000/saveuserid",{id})
+  }
+  catch(error)
+  {
+    console.log("error in userid saving")
+  }
+ }
 
   return (
     <div className='Userlogin-main'>

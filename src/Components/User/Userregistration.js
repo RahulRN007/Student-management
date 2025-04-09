@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, } from 'react'
 import '../../Styles/User/Userregistration.css'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import logo from '../../Images/logo2.png'
 
 function Userregistration() {
+    const navigate = useNavigate()
     const [data, setData] = useState({
         name: "",
         id: "",
@@ -30,9 +31,6 @@ function Userregistration() {
         entrancepercentage: null,
         dobpassing: "",
         
-
-
-
     })
     const handlechange = (e) => {
         const { name, value } = e.target;
@@ -52,14 +50,32 @@ function Userregistration() {
         try {
             console.log("adi sakke")
             const cat = await axios.post("http://localhost:5000/registration", data)
-            console.log(cat.data)
+            if(cat.data.msg == "Saved successfully"){
+                console.log(cat.data.id)
+                const val = cat.data.id
+                accCreated(val)
+                navigate("/userlogin")
+                
+            }
+            
         }
         catch (error) {
             console.log('error', error)
         }
     }
 
-
+const accCreated=async(e)=>{
+    
+    const id = e
+    console.log(id)
+    try{ 
+        const cat = await axios.post("http://localhost:5000/createaccid",{id})
+          }
+          catch(error)
+          {
+            console.log("error in createaccid saving")
+          }
+}
 
     return (
         <div className='Userregistration-main'>

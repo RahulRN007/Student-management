@@ -9,10 +9,11 @@ import Userlandingpage from './Components/User/Userlandingpage';
 import Adminlogin from './Components/Admin/Adminlogin';
 import Usermark from './Components/User/Usermark';
 import Userattendence from './Components/User/Userattendence';
-import { AppProvider } from '../src/Contexts/AppContext';
+import Userstudents from './Components/User/Userstudents';
+// import { AppProvider } from '../src/Contexts/AppContext';
 function App() {
   return (
-    <AppProvider>
+    // <AppProvider>
      <BrowserRouter>
      <Routes>
       <Route path='/admindashboard' element={<Admindashboard/>}></Route>
@@ -24,8 +25,9 @@ function App() {
       <Route path='/adminlogin' element={<Adminlogin/>}></Route>
       <Route path='/usermark' element={<Usermark/>}></Route>
       <Route path='/userattendence' element={<Userattendence/>}></Route>
+      <Route path='/userstudents' element={<Userstudents/>}></Route>
       </Routes></BrowserRouter>
-      </AppProvider>
+      // </AppProvider>
   );
 }
 
