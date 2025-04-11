@@ -87,7 +87,10 @@ function Adminstudentdetails() {
         student.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-
+    const logout = () =>{
+        localStorage.removeItem("admin");
+        navigate("/adminlogin")
+      }
     return (
         <div className='Adminstudentdetails-main'>
             <div className='Adminstudentdetails-container'>
@@ -135,9 +138,9 @@ function Adminstudentdetails() {
                     </div>
                     <div
                         className={`Adminstudentdetails-menu ${activeMenu === 3 ? 'active' : ''}`}
-                        onClick={() => handleMenuClick(3)}
+                        onClick={() =>logout() }
                     >
-                        <RiSettings4Line className='menu-icons' /><h4 className='menu-names'>Menu3</h4>
+                        <RiSettings4Line className='menu-icons' /><h4 className='menu-names'>LogOut</h4>
                     </div>
                 </div>
                 <div className='Adminstudentdetails-rightside'>
@@ -311,8 +314,8 @@ function Adminstudentdetails() {
                                         <td>{student.semester}</td>
                                         <td>{student.department}</td>
                                         <td>{student.phonenumber}</td>
-                                        <td><button onClick={() => handleEdit(student._id)}>Edit</button></td>
-                                        <td><button type='button' onClick={() => handleActive(student._id)}>{student.status}</button></td>
+                                        <td><button className='Adminstudentdetails-buttons' onClick={() => handleEdit(student._id)}>Edit</button></td>
+                                        <td><button className='Adminstudentdetails-buttons' type='button' onClick={() => handleActive(student._id)}>{student.status}</button></td>
                                     </tr>
                                 </tbody>
                             ))}

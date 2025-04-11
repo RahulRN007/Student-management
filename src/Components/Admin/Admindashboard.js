@@ -9,6 +9,7 @@ import { RiSettings4Line } from "react-icons/ri";
 import '../../Styles/Admin/Admindashboard.css'
 import college from '../../Images/college.jpg'
 import { PieChart } from '@mui/x-charts';
+import { AccountSetting03Icon } from "hugeicons-react"; 
 
 function Admindashboard() {
   // const { loginInfo } = useContext(AppContext); // Access loginInfo from context
@@ -27,12 +28,7 @@ function Admindashboard() {
           }
       };
   useEffect(() => {
-    const fetchStudentDetails = async () => {
-      const api = await axios.get("http://localhost:5000/adminstudentdetails");
-      setCount(api.data.data.length);
-    };
     fetchStudentDetails();
-    // viewlikes()
     accloggeddetails()
     acccreateddetails()
     mechCount()
@@ -40,15 +36,20 @@ function Admindashboard() {
     eeeCount()
     ecCount()
     ceCount()
+    deactiveaccdetails()
     
   }, []);
+
+  const fetchStudentDetails = async () => {
+    const api = await axios.get("http://localhost:5000/adminstudentdetails");
+    setCount(api.data.data.length);
+  };
 
   const [mech, setMech] = useState([]);
   const mechCount = async()=>{
     try{
   const cat = await axios.get("http://localhost:5000/sortmech")
-  console.log("jajaja")
-  console.log(cat.data.data.length)
+  
   setMech(cat.data.data.length)
     }
     catch(error){
@@ -59,8 +60,7 @@ function Admindashboard() {
   const csCount = async()=>{
     try{
   const cat = await axios.get("http://localhost:5000/sortcs")
-  console.log("jajaja")
-  console.log(cat.data.data.length)
+ 
   setCs(cat.data.data.length)
     }
     catch(error){
@@ -71,8 +71,7 @@ function Admindashboard() {
   const ecCount = async()=>{
     try{
   const cat = await axios.get("http://localhost:5000/sortec")
-  console.log("jajaja")
-  console.log(cat.data.data.length)
+ 
   setEc(cat.data.data.length)
     }
     catch(error){
@@ -83,8 +82,7 @@ function Admindashboard() {
   const eeeCount = async()=>{
     try{
   const cat = await axios.get("http://localhost:5000/sorteee")
-  console.log("jajaja")
-  console.log(cat.data.data.length)
+ 
   setEee(cat.data.data.length)
     }
     catch(error){
@@ -95,8 +93,7 @@ function Admindashboard() {
   const ceCount = async()=>{
     try{
   const cat = await axios.get("http://localhost:5000/sortce")
-  console.log("jajaja")
-  console.log(cat.data.data.length)
+ 
   setCe(cat.data.data.length)
     }
     catch(error){
@@ -109,7 +106,7 @@ const viewlikes = async()=>{
     try{
         const cat = await axios.get("http://localhost:5000/likeview")
         setView(cat.data.data)
-        console.log(cat.data.data);
+       
         
     }
     catch(error){
@@ -120,7 +117,7 @@ const [logged,setLogged] = useState([])
 const accloggeddetails = async()=>{
   try{
 const cat = await axios.get("http://localhost:5000/userlogintime")
-console.log(cat.data.data)
+
 setLogged(cat.data.data)
   }
   catch(error){
@@ -133,13 +130,34 @@ const [created,setCreated] = useState([])
 const acccreateddetails = async()=>{
   try{
 const cat = await axios.get("http://localhost:5000/createlogintime")
-console.log(cat.data.data)
+
 setCreated(cat.data.data)
   }
   catch(error){
 
   }
 }
+
+
+const [deactiveacc,setDeactiveacc] = useState([])
+const deactiveaccdetails = async()=>{
+  try{
+    console.log("deactive")
+const cat = await axios.get("http://localhost:5000/deactiveaccounts")
+console.log("deactive")
+console.log(cat.data.data)
+setDeactiveacc(cat.data.data)
+  }catch(error){
+
+  }
+}
+
+
+const logout = () =>{
+  localStorage.removeItem("admin");
+  navigate("/adminlogin")
+}
+
 
   return (
     <div className="Admindashboard-main">
@@ -162,9 +180,9 @@ setCreated(cat.data.data)
                     </div>
                     <div
                         className={`Adminstudentdetails-menu ${activeMenu === 3 ? 'active' : ''}`}
-                        onClick={() => handleMenuClick(3)}
+                        onClick={() => logout()}
                     >
-                        <RiSettings4Line className='menu-icons' /><h4 className='menu-names'>Menu3</h4>
+                        <RiSettings4Line className='menu-icons' /><h4 className='menu-names'>LogOut</h4>
                     </div>
                     </div>
 
@@ -172,11 +190,12 @@ setCreated(cat.data.data)
           
             <div className='Admindashboard-grid-small'>
               <div className='Admindashboard-grid-small1'>
-              <h3>Total Number of students: {count}</h3>
+              <AccountSetting03Icon className='no-of-students-icons' size={44} color="red"/><h3 className='no-of-students-value'>{count}</h3>
+<h4 className='no-of-students-value2'>Total Number of students </h4>
               </div>
               
               <div className='Admindashboard-grid-small3'>
-              <h3 style={{ marginLeft: '1rem',marginTop:'1rem' }}>Statistics</h3>
+              <h2 style={{ marginLeft: '1rem',marginTop:'1rem' }}>Statistics</h2>
   <PieChart className='Admindashboard-piechart'
     series={[
       {
@@ -197,12 +216,31 @@ setCreated(cat.data.data)
     height={200}
   />
               </div>
-              <div className='Admindashboard-grid-small2'></div>
+              <div className='Admindashboard-grid-small2'>
+                <div className="Admindashboard-header">
+        <h2>Deactive Accounts</h2>
+      </div>
+      <div className="Admindashboard-table-header-small2">
+        <span>Name</span>
+        <span>Department</span>
+        <span>Semester</span>
+        
+      </div>
+      {deactiveacc.map((item, index) => (
+        <div className="Admindashboard-row-small2" key={index}>
+          <span>{item.name}</span>
+          <span>{item.department}</span>
+          <span>{item.semester}</span>
+          {/* <span>{new Date(item.logintime).toLocaleString()}</span> */}
+        </div>
+      ))}
+              </div>
               </div>
             <div className='Admindashboard-grid-large'>
+            <div className="scroll-wrapper">
               <div className="Admindashboard-grid-small5">
       <div className="Admindashboard-header">
-        <h2>Students Login</h2>
+       <h2>Students Login</h2>
       </div>
       <div className="Admindashboard-table-header">
         <span>Name</span>
@@ -223,6 +261,8 @@ setCreated(cat.data.data)
         </div>
       ))}
     </div>
+    </div>
+    <div className="scroll-wrapper">
               <div className='Admindashboard-grid-small6'>
               <div className="Admindashboard-header">
         <h2>Accounts Created</h2>
@@ -244,6 +284,7 @@ setCreated(cat.data.data)
           <span className="more-options">Acc Created</span>
         </div>
       ))}
+              </div>
               </div>
 
             </div>

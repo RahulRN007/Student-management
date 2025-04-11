@@ -12,7 +12,6 @@ function Userlogin() {
   const [password,setPassword] = useState([])
   // const { updateLoginInfo } = useContext(AppContext);
   const navigate = useNavigate()
-  
   const verification = async(e) =>{
     e.preventDefault()
     try{

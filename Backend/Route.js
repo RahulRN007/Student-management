@@ -24,6 +24,7 @@ route.post('/saveuserid',Admincontroller.saveuserId)
 route.get('/userlogintime',Admincontroller.userLoginTime)
 route.post('/createaccid',Admincontroller.createaccId)
 route.get('/createlogintime',Admincontroller.createLoginTime)
+route.get('/deactiveaccounts',Admincontroller.deactiveAcc)
 
 
 

@@ -4,107 +4,113 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.Adminlogin-container {
-    width: 97%;
-    height: 96%;
-    background: linear-gradient(to bottom, rgb(18, 134, 143) 70%, white 100%);
-    border-radius: 15px;
-}
-
-.Adminlogin-loginbox {
-    width: 22%;
-    height: 47%;
-    background: linear-gradient(to top, rgb(18, 134, 143) 50%, white 100%);
-
-    border-radius: 15px;
-    position: relative;
-    top: 28%;
-    left: 74%;
+    background-image: url('../../Images/books.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .Adminlogin-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
     display: flex;
+    align-items: center;
     justify-content: center;
-
-}
-
-.Adminlogin-form {
+    position: relative;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 120px;
+    height: auto;
+  }
+  
+  .Adminlogin-loginbox {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Adminlogin-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* .Adminlogin-form-input {
-    width: 20rem;
-    height: 2.5rem;
-    display: flex;
-    justify-content: center;
-    min-width: 20rem;
-} */
-
-.Adminlogin-form-input {
-    width: 20rem;
-    height: 2.5rem;
-    display: flex;
-    justify-content: center;
-    min-width: 20rem;
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px;
-    padding: 0 10px;
-    transition: all 0.3s ease-in-out; /* Smooth transition */
-}
-
-.Adminlogin-form-input:focus {
-    border-color: #2563EB; /* Blue border on focus */
-    background-color: #E5E7EB; /* Light gray background when focused */
-    outline: none; /* Remove default outline */
-}
-
-
-.Adminlogin-form-text {
-    display: flex;
-    justify-content: center;
-    margin-top: 15%;
-    color: black;
-    
-} 
-
-
-.Adminlogin-form-button {
-    width: 45%;
-    height: 2.5rem;
-    margin-top: 1.5rem;
-    margin-right: 10rem;
-}
-
-.Adminlogin-form-forgottext {
-    font-size: 15px;
-    margin-top: 5px;
-    color: black;
-    position: relative;
-    bottom: 9%;
-    left: 6.5rem;
+  }
+  
+  .Adminlogin-form-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+  }
+  
+  .Adminlogin-form-input {
+    width: 100%;
+    height: 2.8rem;
+    margin-bottom: 1rem;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Adminlogin-form-input:focus {
+    border-color: #2563EB;
+    background-color: #e0e7ff;
+    outline: none;
+  }
+  
+  .Adminlogin-form-button {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .Adminlogin-form-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .Adminlogin-form-termstext,
+  .Adminlogin-form-forgottext,
+  .Adminlogin-form-createtext {
+    font-size: 0.9rem;
+    color: #374151;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  
+  .Adminlogin-form-forgottext {
     text-decoration: underline;
-    
-}
-.Adminlogin-form-termstext{
-    color: black;
-    margin-top: -0.9rem;
-    margin-right: 2rem;
-    margin-left: 1.5rem;
-
-}
-.Adminlogin-form-createtext{
-    position: relative;
-    bottom: 2rem;
-}
-.Adminlogin-form-createtext span{
+    cursor: pointer;
+  }
+  
+  .Adminlogin-form-createtext span {
+    color: #2563EB;
+    cursor: pointer;
     text-decoration: underline;
-    color: blue;
-}
-.logo{
-    position: absolute;
-    width: 140px;
-    height: 77px;
-    left: 5rem;
-    top: 3rem;
-}
+  }
+  

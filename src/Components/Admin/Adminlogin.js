@@ -17,10 +17,13 @@ function Adminlogin() {
         if(admin1 == email && pass1 == password){
             navigate("/admindashboard")
             alert("Successfully logged in")
+            localStorage.setItem("admin",admin1)
+
         }
         else if(admin2 == email && pass2 == password){
             navigate("/admindashboard")
             alert("Successfully logged in")
+            localStorage.setItem("admin",admin2)
         }
         else
         {

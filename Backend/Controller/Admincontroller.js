@@ -6,7 +6,7 @@ var useridschema = require("../Schema/Useridschema")
 
 const searchValues = async (req, res) => {
   const search = req.body
-  console.log(search)
+  
   try {
     const result = await schema.find({ search: search })
     if (result == null) {
@@ -20,12 +20,26 @@ const searchValues = async (req, res) => {
   }
 }
 
+
+const deactiveAcc = async(req,res)=>{
+  try {
+    const result = await schema.find({status:"deactive"})
+    console.log(result)
+    res.status(200).json({
+      data:result
+    })
+  }
+  catch (error) {
+    res.status(500).json({ error: "deactive details Server Error",})
+  }
+}
+
+
 const sortMech = async (req, res) => {
   
   try {
     const result = await schema.find({department:"mech"})
-    console.log("bbbb")
-    console.log(result.length)
+
     res.status(200).json({
       data:result
     })
@@ -37,8 +51,7 @@ const sortMech = async (req, res) => {
 const sortEc = async (req, res) => {
   try {
     const result = await schema.find({department:"ec"})
-    console.log("bbbb")
-    console.log(result)
+    
     res.status(200).json({
       data:result
     })
@@ -50,8 +63,7 @@ const sortEc = async (req, res) => {
 const sortEee = async (req, res) => {
   try {
     const result = await schema.find({department:"eee"})
-    console.log("bbbb")
-    console.log(result)
+    
     res.status(200).json({
       data:result
     })
@@ -63,8 +75,7 @@ const sortEee = async (req, res) => {
 const sortCs = async (req, res) => {
   try {
     const result = await schema.find({department:"cs"})
-    console.log("bbbb")
-    console.log(result)
+    
     res.status(200).json({
       data:result
     })
@@ -76,8 +87,7 @@ const sortCs = async (req, res) => {
 const sortCe = async (req, res) => {
   try {
     const result = await schema.find({department:"ce"})
-    console.log("bbbb")
-    console.log(result)
+    
     res.status(200).json({
       data:result
     })
@@ -88,8 +98,7 @@ const sortCe = async (req, res) => {
 }
 
 const saveuserId =async(req,res)=>{
-  console.log(req.body.id)
-  console.log(typeof req.body.id); // string, number, object, etc.
+  
 
   try{
     const saveuser = new useridschema({
@@ -111,8 +120,7 @@ const saveuserId =async(req,res)=>{
 const userLoginTime = async(req,res)=>{
 try{
   const result = await useridschema.find({}).populate("userid")
-  console.log("balabala")
-  console.log(result)
+  
   res.status(200).json({
     data:result
   })
@@ -123,9 +131,7 @@ res.status(500).json({ msg: "userlogged view failed!!!", error });
 
 
 const createaccId =async(req,res)=>{
-  console.log(req.body.id)
-  console.log(typeof req.body.id); // string, number, object, etc.
-
+ 
   try{
     const saveuser = new createaccschema({
       userid: req.body.id,
@@ -146,8 +152,7 @@ const createaccId =async(req,res)=>{
 const createLoginTime = async(req,res)=>{
   try{
     const result = await createaccschema.find({}).populate("userid")
-    console.log("createeeeeeeeeeeeeeeeee")
-    console.log(result)
+    
     res.status(200).json({
       data:result
     })
@@ -157,4 +162,4 @@ const createLoginTime = async(req,res)=>{
   }
 
 
-module.exports = { createLoginTime,createaccId,userLoginTime,saveuserId ,searchValues, sortCe,sortMech, sortEc,sortCs,sortEee }
+module.exports = { deactiveAcc,createLoginTime,createaccId,userLoginTime,saveuserId ,searchValues, sortCe,sortMech, sortEc,sortCs,sortEee }

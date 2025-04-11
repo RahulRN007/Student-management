@@ -4,55 +4,170 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, rgb(18, 134, 143) 70%, white 100%);
+    background-image: url("../../Images/books.jpg");
+    background-size: cover;
 }
 
-button{
-    width: 100px;
-    height: 40px;
-}
-.Adminuserpage-button-container{
-    display: flex;
-    justify-content: center;
+.Adminuserpage-navbar{
     position: relative;
-    top: 0rem;
-    left: 4rem;
-    
-    height: 100px;
-    width: 200px;
-}
-
-.Adminuserpage-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: rgb(18, 134, 143);
-}
-
-.Adminuserpage-button-container {
+    background:rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    width: 80rem;
+    height: 5rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+
+}
+.Adminuserpage-logo-div{
+    width: 30%;
+}
+.Adminuserpage-menu{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Adminuserpage-menu ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.Adminuserpage-button {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    font-weight: bold;
+.Adminuserpage-menu ul li {
+    font-size: 15px;
     color: white;
-    background: rgb(18, 134, 143);
-    border: none;
-    border-radius: 8px;
     cursor: pointer;
+    position: relative;
     transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding-bottom: 5px;
 }
 
-.Adminuserpage-button:hover {
-    background: rgb(14, 110, 117);
+.Adminuserpage-menu ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
 }
+
+.Adminuserpage-menu ul li:hover {
+    color: #d1f5ff; /* slight tint when hovered */
+    transform: translateY(-2px);
+}
+
+.Adminuserpage-menu ul li:hover::after {
+    width: 100%;
+}
+
+.Adminuserpage-logo{
+    width: 7rem;
+    height: 4.rem;
+    margin-left: 1.6rem;
+    margin-top: .7rem;
+    transition: all 0.3s ease-in-out;
+
+}
+.Adminuserpage-logo:hover{
+    transform: scale(1.05);
+}
+.Adminuserpage-navbar-button{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    position: relative;
+    left: 5rem;
+    font-size: 15px;
+    
+
+}
+.Adminuserpage-navbar-button-buttons {
+    width: 8.5rem;
+    height: 2.8rem;
+    border-radius: 12px;
+    background-color: #12868f;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Adminuserpage-navbar-button-buttons::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: skewX(-20deg);
+    transition: left 0.4s ease;
+}
+
+.Adminuserpage-navbar-button-buttons:hover::after {
+    left: 100%;
+}
+
+.Adminuserpage-navbar-button-buttons:hover {
+    background-color: #0e6e75;
+    transform: translateY(-3px);
+}
+
+
+.Adminuserpage-menu ul li:hover{
+color: #12868f;
+}
+
+.Adminuserpage-mid-first-learn{
+    font-size: 60px;
+    color: white;
+    position: relative;
+    top: 14rem;
+    right: 21rem;
+
+}
+.Adminuserpage-mid-first-lead{
+    font-size: 60px;
+    color: white;
+    position: relative;
+    top: 14rem;
+    right: 11rem;
+
+}
+.Adminuserpage-mid-first-succeed{
+    font-size: 60px;
+    color: white;
+    position: relative;
+    top: 14rem;
+    right:2rem;
+
+}
+.Adminuserpage-mid-first h4{
+    top: 15rem;
+    position: relative;
+    right: 21rem;
+    color: darkgrey;
+    font-weight: normal;
+}
+
+
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

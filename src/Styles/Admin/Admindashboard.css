@@ -20,7 +20,7 @@
 
 }
 .Admindashboard-sidebar{
-    width: 18%;
+    width: 20rem;
     height: 100%;
     border-radius: 15px;
     border: 1px solid black;
@@ -160,8 +160,28 @@ Link{
   }
   .Admindashboard-piechart{
     margin-left: 7rem;
-    margin-top: -.5rem;
+    margin-top: -1rem;
   }
+
+.Admindashboard-grid-small2 h2{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  overflow-y: auto;
+}
+.Admindashboard-grid-small2::-webkit-scrollbar{
+  width: 6px;
+}
+.Admindashboard-grid-small2::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.Admindashboard-grid-small2::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  border: none;
+}
+
+
   .Admindashboard-grid-small3{
     background: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
@@ -174,12 +194,15 @@ Link{
     position: relative;
     right:2.5rem;
   }
+  .Admindashboard-grid-small3 h3{
+
+  }
 
   .Admindashboard-grid-small1:hover,
   .Admindashboard-grid-small3:hover,
-  .Admindashboard-grid-small2:hover,
-  .Admindashboard-grid-small5:hover,
-  .Admindashboard-grid-small6:hover
+  .Admindashboard-grid-small2:hover
+  /* .Admindashboard-grid-small5:hover,
+  .Admindashboard-grid-small6:hover */
  {
     transform: scale(1.05); 
   }
@@ -194,6 +217,7 @@ Link{
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, transform 0.3s ease;
+
     
   }
 
@@ -201,8 +225,15 @@ Link{
   position: relative;
   top: 5rem;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  left: 1.5rem;
+  grid-template-columns: repeat(2,45rem);
+  left: .3rem;
+  justify-content: center;
+  
+}
+.scroll-wrapper {
+  border-radius: 20px;
+  overflow: hidden; 
+  height: 100%;
 }
 
   .Admindashboard-logindetails {
@@ -271,23 +302,54 @@ Link{
     color: #333;
     font-family: 'Segoe UI', sans-serif;
     overflow-y: auto;
+
+  }
+  .Admindashboard-grid-small5::-webkit-scrollbar,.Admindashboard-grid-small6::-webkit-scrollbar {
+    width: 6px;
+  }
+  .Admindashboard-grid-small5::-webkit-scrollbar-track,.Admindashboard-grid-small6::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .Admindashboard-grid-small5::-webkit-scrollbar-thumb,.Admindashboard-grid-small6::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    border: none;
   }
   
   .Admindashboard-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    position: static;
   }
   
 
-  
+  .Admindashboard-table-header-small2{
+    display: grid;
+    grid-template-columns:  2.2fr 2fr 2fr;
+    align-items: center;
+    padding: 1rem ;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    color: #555;
+  }
+  .Admindashboard-row-small2{
+    display: grid;
+    grid-template-columns:  2.2fr 2fr 2fr;
+    align-items: center;
+    padding: 1rem ;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s;
+  }
   .Admindashboard-table-header {
     display: grid;
     grid-template-columns: 1.7fr 2.2fr 2fr 1.7fr 2fr;
     align-items: center;
     padding: 1rem ;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    color: #555;
   }
   .Admindashboard-row{
     display: grid;
@@ -295,15 +357,11 @@ Link{
     align-items: center;
     padding: 1rem ;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .Admindashboard-table-header {
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .Admindashboard-row {
     transition: background 0.3s;
   }
+  
+  
+  
   
   .Admindashboard-row:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -316,4 +374,18 @@ Link{
     font-size: 1rem;
     cursor: pointer;
   }
+
   
+
+  .no-of-students-icons{
+    margin-top: 5rem;
+    margin-left: 6rem;
+  }
+  .no-of-students-value{
+    font-size: 40px;
+    margin-left: 8.7rem;
+    margin-top: -3rem;
+  }
+  .no-of-students-value2{
+    margin-left: 9rem;
+  }
