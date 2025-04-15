@@ -8,7 +8,11 @@
     background-image: url("../../Images/books.jpg");
     background-size: cover;
 }
-
+.Adminuserpage-navbar-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .Adminuserpage-navbar{
     position: relative;
     background:rgba(255,255,255,0.1);
@@ -18,11 +22,60 @@
     margin-top: 1rem;
     border-radius: 1rem;
     display: flex;
-
 }
+
+.Adminuserpage-mid{
+    display: flex;
+    width: 100%;
+}
+.Adminuserpage-mid-first{
+    width: 50%;
+    
+}
+.Adminuserpage-mid-second {
+    width: 50%;
+}
+
 .Adminuserpage-logo-div{
     width: 30%;
 }
+
+
+
+.Adminuserpage-mid-first-learn{
+    font-size: 60px;
+    color: white;
+    position: relative;
+    top: 14rem;
+    left: 15rem;
+
+}
+.Adminuserpage-mid-first-lead{
+    font-size: 60px;
+    color: white;
+    position: relative;
+    top: 14rem;
+    left: 24rem;
+
+}
+.Adminuserpage-mid-first-succeed{
+    font-size: 60px;
+    color: white;
+    position: relative;
+    top: 14rem;
+    left:32rem;
+
+}
+.Adminuserpage-mid-first h4{
+    top: 15rem;
+    position: relative;
+    left: 15rem;
+    color: darkgrey;
+    font-weight: normal;
+}
+
+
+
 .Adminuserpage-menu{
     width: 40%;
     display: flex;
@@ -133,40 +186,6 @@
 color: #12868f;
 }
 
-.Adminuserpage-mid-first-learn{
-    font-size: 60px;
-    color: white;
-    position: relative;
-    top: 14rem;
-    right: 21rem;
-
-}
-.Adminuserpage-mid-first-lead{
-    font-size: 60px;
-    color: white;
-    position: relative;
-    top: 14rem;
-    right: 11rem;
-
-}
-.Adminuserpage-mid-first-succeed{
-    font-size: 60px;
-    color: white;
-    position: relative;
-    top: 14rem;
-    right:2rem;
-
-}
-.Adminuserpage-mid-first h4{
-    top: 15rem;
-    position: relative;
-    right: 21rem;
-    color: darkgrey;
-    font-weight: normal;
-}
-
-
-
 
 
 /* Responsive Design */
@@ -178,4 +197,60 @@ color: #12868f;
     .Adminuserpage-title {
         font-size: 1.5rem;
     }
+}
+
+
+
+/* Stack Area Layout */
+.stack-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Right Section - Stacked Cards */
+.stack-area .right {
+    flex: 1;
+    position: relative;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.stack-area .card {
+    position: absolute;
+    width: 280px;
+    height: 180px;
+    border-radius: 16px;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1rem;
+}
+
+.stack-area .card .sub {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stack-area .card .content {
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
